@@ -12,6 +12,7 @@ body{
   color: white;
   font-family: Asap ,sans-serif;
   overflow: hidden;
+  width:100%;
 }
 
 .gameboy{
