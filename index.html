@@ -23,20 +23,24 @@
             <img class="s9" src="image/defaultpic.png" id="s9" />
           </div>
           <div class="buttons">
-            <button class="pos1" onclick="btn_test_1()"></button>
-            <button class="pos2" onclick="btn_test_2()"></button>
-            <button class="pos3" onclick="btn_test_3()"></button>
-            <button class="pos4" onclick="btn_test_4()"></button>
-            <button class="pos5" onclick="btn_test_5()"></button>
-            <button class="pos6" onclick="btn_test_6()"></button>
-            <button class="pos7" onclick="btn_test_7()"></button>
-            <button class="pos8" onclick="btn_test_8()"></button>
-            <button class="pos9" onclick="btn_test_9()"></button>
+            <button class="pos1" onclick="btn_test_1()" id="b1"></button>
+            <button class="pos2" onclick="btn_test_2()" id="b2"></button>
+            <button class="pos3" onclick="btn_test_3()" id="b3"></button>
+            <button class="pos4" onclick="btn_test_4()" id="b4"></button>
+            <button class="pos5" onclick="btn_test_5()" id="b5"></button>
+            <button class="pos6" onclick="btn_test_6()" id="b6"></button>
+            <button class="pos7" onclick="btn_test_7()" id="b7"></button>
+            <button class="pos8" onclick="btn_test_8()" id="b8"></button>
+            <button class="pos9" onclick="btn_test_9()" id="b9"></button>
+          </div>
+          <div class="finish">
+            <p class="win" id="win"></p>
+            <p class="draw" id="draw">Draw</p>
           </div>
           <div class="bottom-text">
             <h1 class="title">Tic-Tac-Toe</h1>
-            <button class="start">Start</button>
-            <button class="reset">Reset</button>
+            <button class="start" onclick="win_msg()">-Score-</button>
+            <button class="reset" onclick="btn_reset()">Reset</button>
           </div>
         </div>
       </div>
