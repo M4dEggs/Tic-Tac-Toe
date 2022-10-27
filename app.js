@@ -1,13 +1,12 @@
 
 
-
-
 var game = 0;
 var turn = 1;
 var moves = ["","","","","","","","","",""];
-let draw_moves = [];
+var move_count = 0;
 
 if (game < 1){
+
     var win = document.getElementById('win');
     function btn_test_1(){
         document.getElementById("b1").disabled = true;
@@ -24,7 +23,7 @@ if (game < 1){
             win_check();
         }
         document.getElementById('s1').style.display = 'block';
-        draw_moves.push(1);     
+        move_count ++; 
     }
     
     function btn_test_2(){
@@ -41,8 +40,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s2').style.display = 'block';
-        draw_moves.push(1);
-
+        move_count ++;
     }
 
     function btn_test_3(){
@@ -59,8 +57,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s3').style.display = 'block';
-        draw_moves.push(1);
-
+        move_count ++; 
     }
 
     function btn_test_4(){
@@ -77,7 +74,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s4').style.display = 'block';
-        draw_moves.push(1);
+        move_count ++;
     }
     
     function btn_test_5(){
@@ -94,7 +91,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s5').style.display = 'block';
-        draw_moves.push(1);
+        move_count ++; 
     }
 
     function btn_test_6(){
@@ -111,8 +108,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s6').style.display = 'block';
-        draw_moves.push(1);
-
+        move_count ++;
     }
 
     function btn_test_7(){
@@ -129,7 +125,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s7').style.display = 'block';
-        draw_moves.push(1);
+        move_count ++;
     }
     
     function btn_test_8(){
@@ -146,8 +142,7 @@ if (game < 1){
         }
         win_check();
         document.getElementById('s8').style.display = 'block';
-        draw_moves.push(1);
-
+        move_count ++; 
     }
 
     function btn_test_9(){
@@ -165,17 +160,16 @@ if (game < 1){
             
         }
         win_check();
-        
         document.getElementById('s9').style.display = 'block';
-        draw_moves.push(1);
-
+        move_count ++;
     }
 
     function btn_reset(){
-        console.log(moves)
-        console.log(draw_moves.length);
-        draw_moves = [];
+        console.log(moves);
+        console.log("move num = "+ move_count);
+        draw_moves = ["1"];
         moves = ["","","","","","","","","",""];
+        move_count = 0;
         turn = 1;
          /* to hide all tiles */
         document.getElementById('s1').style.display = 'none';
@@ -203,17 +197,26 @@ if (game < 1){
 
     function win_circle (){
         var win = document.getElementById("win");
-        win.innerHTML = "Circle has won the game! Cick the reset button";
+        win.innerHTML = "X has won the game! Cick the reset button";
         win.style.display = 'block';
         win.style.top = "150px";
     }
 
     function win_x (){
         var win = document.getElementById("win");
-        win.innerHTML = "X has won the game! Cick the reset button";
+        win.innerHTML = "Circle has won the game! Cick the reset button";
         win.style.display = 'block';
         win.style.top = "150px";
         
+    }
+
+
+    function draw(){
+        var win = document.getElementById("win");
+        win.innerHTML = "Its a draw ! Cick the reset button";
+        win.style.display = 'block';
+        win.style.top = "150px";
+
     }
 
     function disable_btn (){
@@ -229,77 +232,76 @@ if (game < 1){
     }
 
     function win_check(){
+        if(move_count == 8){
+            draw();
+            console.log("its a draw")
+        }
         if (moves[1] != "" && moves[1]==moves[2] && moves[2]==moves[3]){
             if (moves[3]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }
         if (moves[4] != "" && moves[4]==moves[5] && moves[5]==moves[6]){
             if (moves[6]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }
         if (moves[7] != "" && moves[7]==moves[8] && moves[8]==moves[9]){
-            if (moves[9]== "o"){
-                win_x();
-            }else{
+            if (moves[3]== "9"){
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }
         if (moves[1] != "" && moves[1]==moves[4] && moves[4]==moves[7]){
             if (moves[7]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }         
         if (moves[2] != "" && moves[2]==moves[5] && moves[5]==moves[8]){
             if (moves[8]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }
         if (moves[3] != "" && moves[3]==moves[6] && moves[6]==moves[9]){
             if (moves[9]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }
         if (moves[1] != "" && moves[1]==moves[5] && moves[5]==moves[9]){
             if (moves[9]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }  
         if (moves[3] != "" && moves[3]==moves[5] && moves[5]==moves[7]){
             if (moves[7]== "o"){
-                win_x();
-            }else{
                 win_circle();
+            }else{
+                win_x();
             }
             disable_btn ();
         }
-    
-    
     }
 }
-
-
-
 
 
 
