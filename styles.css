@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@500;700&display=swap');
 *{
   margin: 0;
@@ -217,12 +216,6 @@ body{
   z-index: 3;
 }
 
-.draw{
-  position: absolute;
-  left:90px;
-  color: black;
-}
-
 .bottom-text {
   background-color: rgb(68, 68, 68);
   margin: auto;
@@ -252,6 +245,7 @@ body{
   margin-right: 1000px;
   border: 0;
   margin-left: 95px;
+  display: none;
 }
 
 .reset {
